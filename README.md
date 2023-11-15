@@ -6,7 +6,7 @@ I'm leaving it as a Mac setup procedure for myself.
 
 1. Download
    ```bash
-   git clone https://github.com/j-tatatata/dotfiles.git
+   git clone https://github.com/jn-tatata/dotfiles.git
    cd dotfiles
    ```
 
