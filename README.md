@@ -88,3 +88,13 @@ I'm leaving it as a Mac setup procedure for myself.
   ```bash
   brew install --cask slack
   ```
+
+- docker
+  ```bash
+  brew install --cask docker
+  ```
+
+- rbenv
+  ```bash
+  brew install rbenv
+  ```
