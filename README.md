@@ -94,6 +94,11 @@ I'm leaving it as a Mac setup procedure for myself.
   brew install --cask docker
   ```
 
+- sequel-ace
+  ```bash
+  brew install --cask sequel-ace
+  ```
+
 - rbenv
   ```bash
   brew install rbenv
