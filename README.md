@@ -11,32 +11,32 @@ I'm leaving it as a Mac setup procedure for myself.
 
 1. Setup
 
-  一括で実行する場合
-  ```bash
-  $ cd dotfiles && make
-  ```
+    一括で実行する場合
+    ```bash
+    $ cd dotfiles && make
+    ```
 
-  段階的に個別実行していく場合
-  ```bash
-  $ cd dotfiles
+    段階的に個別実行していく場合
+    ```bash
+    $ cd dotfiles
 
-  <!-- Set initial preference. -->
-  $ make init
+    <!-- Set initial preference. -->
+    $ make init
 
-  <!-- Link dotfiles. -->
-  $ make link
+    <!-- Link dotfiles. -->
+    $ make link
 
-  <!-- Set macOS system preferences. -->
-  $ make defaults
+    <!-- Set macOS system preferences. -->
+    $ make defaults
 
-  <!-- Install macOS applications. -->
-  $ make brew
-  ```
+    <!-- Install macOS applications. -->
+    $ make brew
+    ```
 
 ### Refs
-- 構成:
+- 構成参考:
   - https://github.com/tsukuboshi/dotfiles
-- zsh設定:
+- zsh設定参考:
   - https://zenn.dev/sprout2000/articles/bd1fac2f3f83bc
   - https://www.m3tech.blog/entry/dotfiles-bonsai#Zsh%E7%B7%A8
   - https://qiita.com/ryuichi1208/items/2eef96debebb15f5b402
