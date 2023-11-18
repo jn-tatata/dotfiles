@@ -6,15 +6,40 @@ I'm leaving it as a Mac setup procedure for myself.
 
 1. Download
    ```bash
-   git clone https://github.com/jn-tatata/dotfiles.git
-   cd dotfiles
+   $ git clone https://github.com/jn-tatata/dotfiles.git
    ```
 
 1. Setup
 
+  一括で実行する場合
   ```bash
-  ./setup.sh
+  $ cd dotfiles && make
   ```
+
+  段階的に個別実行していく場合
+  ```bash
+  $ cd dotfiles
+
+  <!-- Set initial preference. -->
+  $ make init
+
+  <!-- Link dotfiles. -->
+  $ make link
+
+  <!-- Set macOS system preferences. -->
+  $ make defaults
+
+  <!-- Install macOS applications. -->
+  $ make brew
+  ```
+
+### Refs
+- 構成:
+  - https://github.com/tsukuboshi/dotfiles
+- zsh設定:
+  - https://zenn.dev/sprout2000/articles/bd1fac2f3f83bc
+  - https://www.m3tech.blog/entry/dotfiles-bonsai#Zsh%E7%B7%A8
+  - https://qiita.com/ryuichi1208/items/2eef96debebb15f5b402
 
 ## Other Settings
 
@@ -45,65 +70,9 @@ I'm leaving it as a Mac setup procedure for myself.
 - 拡張子の表示
 - サイドバー表示項目の調整
 
-### 開発ツール系インストール
-
-- Xcode
-
-  ref: https://developer.apple.com/jp/xcode/resources/
-
-- Homebrew
-
-  ref: https://brew.sh/ja/
-
-- Google Chrome
-
-  ```bash
-  brew install --cask google-chrome
-  ```
-
-- VScode
-  ```bash
-  brew install --cask visual-studio-code
-  ```
-
-- AndroidStudio
-  ```bash
-  brew install --cask android-studio
-  ```
-
-- Fork(Git Client)
-  ```bash
-  brew install --cask fork
-  ```
-  ref: https://git-fork.com/
-
-- notion
-  ```
-  brew install --cask notion
-  ```
-
-- warp(terminal)
-  ```bash
-  brew install --cask warp
-  ```
-  ref: https://www.warp.dev/b
-
-- slack
-  ```bash
-  brew install --cask slack
-  ```
-
-- docker
-  ```bash
-  brew install --cask docker
-  ```
-
-- sequel-ace
-  ```bash
-  brew install --cask sequel-ace
-  ```
-
-- rbenv
-  ```bash
-  brew install rbenv
-  ```
+### 小ネタ
+zshでテトリスできる
+```bash
+$ autoload -Uz tetris
+$ zle -N tetris
+```
