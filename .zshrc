@@ -17,34 +17,6 @@ export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30
 export RSYNC_RSH=ssh
 
 # -----------------------------
-# Plugin(zplug)
-# ref: https://github.com/zplug/zplug
-# -----------------------------
-# zplug有効化
-source ~/.zplug/init.zsh
-# zplug "ユーザー名/リポジトリ名", タグ
-# タイプ補完
-zplug zsh-users/zsh-completions
-# 履歴補完
-zplug zsh-users/zsh-autosuggestions
-# 構文のハイライト
-zplug zsh-users/zsh-syntax-highlighting, defer:2
-# cd コマンド拡張
-zplug b4b4r07/enhancd, use:init.sh
-# テーマ設定
-zplug mafredri/zsh-async, from:github
-zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
-# 差分プラグインをインストール
-if ! zplug check --verbose; then
-  printf "Install? [y/N]: "
-  if read -q; then
-      echo; zplug install
-  fi
-fi
-# コマンドをリンクして、PATH に追加し、プラグインは読み込む
-zplug load --verbose
-
-# -----------------------------
 # Alias
 # -----------------------------
 # グローバルエイリアス
@@ -98,12 +70,6 @@ setopt extended_glob
 
 # コマンドラインがどのように展開され実行されたかを表示するようになる
 #setopt xtrace
-
-# 自動でpushdを実行
-setopt auto_pushd
-
-# pushdから重複を削除
-setopt pushd_ignore_dups
 
 # ビープ音を鳴らさないようにする
 #setopt no_beep
@@ -246,3 +212,31 @@ setopt hist_save_no_dups
 # ^P,^Nを検索へ割り当て
 #bindkey "^P" history-beginning-search-backward-end
 #bindkey "^N" history-beginning-search-forward-end
+
+# -----------------------------
+# Plugin(zplug)
+# ref: https://github.com/zplug/zplug
+# -----------------------------
+# zplug有効化
+source ~/.zplug/init.zsh
+# zplug "ユーザー名/リポジトリ名", タグ
+# タイプ補完
+zplug zsh-users/zsh-completions
+# 履歴補完
+zplug zsh-users/zsh-autosuggestions
+# 構文のハイライト
+zplug zsh-users/zsh-syntax-highlighting, defer:2
+# cd コマンド拡張
+zplug b4b4r07/enhancd, use:init.sh
+# テーマ設定
+zplug mafredri/zsh-async, from:github
+zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+# 差分プラグインをインストール
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+      echo; zplug install
+  fi
+fi
+# コマンドをリンクして、PATH に追加し、プラグインは読み込む
+zplug load --verbose
