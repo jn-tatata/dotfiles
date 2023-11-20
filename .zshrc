@@ -17,6 +17,34 @@ export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30
 export RSYNC_RSH=ssh
 
 # -----------------------------
+# Plugin(zplug)
+# ref: https://github.com/zplug/zplug
+# -----------------------------
+# zplug有効化
+source ~/.zplug/init.zsh
+# zplug "ユーザー名/リポジトリ名", タグ
+# タイプ補完
+zplug zsh-users/zsh-completions
+# 履歴補完
+zplug zsh-users/zsh-autosuggestions
+# 構文のハイライト
+zplug zsh-users/zsh-syntax-highlighting, defer:2
+# cd コマンド拡張
+zplug b4b4r07/enhancd, use:init.sh
+# テーマ設定
+zplug mafredri/zsh-async, from:github
+zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+# 差分プラグインをインストール
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+      echo; zplug install
+  fi
+fi
+# コマンドをリンクして、PATH に追加し、プラグインは読み込む
+zplug load --verbose
+
+# -----------------------------
 # Alias
 # -----------------------------
 # グローバルエイリアス
@@ -26,10 +54,6 @@ alias -g G='| grep'
 alias -g GI='| grep -ri'
 
 # エイリアス
-alias ..='cd ../'
-alias ....='cd ../../'
-alias ......='cd ../../../'
-
 alias lst='ls -ltr --color=auto'
 alias ls='ls --color=auto'
 alias la='ls -la --color=auto'
@@ -57,6 +81,9 @@ autoload -Uz colors ; colors
 # cdした際のディレクトリをディレクトリスタックへ自動追加
 setopt auto_pushd
 
+# ディレクトリ名の入力のみで移動する
+setopt auto_cd
+
 # ディレクトリスタックへの追加の際に重複させない
 setopt pushd_ignore_dups
 
@@ -68,9 +95,6 @@ setopt no_flow_control
 
 # ワイルドカード展開を使用する
 setopt extended_glob
-
-# cdコマンドを省略して、ディレクトリ名のみの入力で移動
-setopt auto_cd
 
 # コマンドラインがどのように展開され実行されたかを表示するようになる
 #setopt xtrace
@@ -86,9 +110,6 @@ setopt pushd_ignore_dups
 
 # カッコの対応などを自動的に補完する
 setopt auto_param_keys
-
-# ディレクトリ名の入力のみで移動する
-setopt auto_cd
 
 # bgプロセスの状態変化を即時に知らせる
 setopt notify
@@ -124,8 +145,9 @@ setopt noautoremoveslash
 # 各コマンドが実行されるときにパスをハッシュに入れる
 #setopt hash_cmds
 
-# その他
+# デフォルト権限設定=>ファイル:644,ディレクトリ: 755
 umask 022
+# コアファイルの出力を無効化
 ulimit -c 0
 
 # -----------------------------
@@ -212,10 +234,10 @@ setopt inc_append_history
 setopt hist_verify
 
 #余分なスペースを削除してヒストリに記録する
-#setopt hist_reduce_blanks
+setopt hist_reduce_blanks
 
 # historyコマンドは残さない
-#setopt hist_save_no_dups
+setopt hist_save_no_dups
 
 # ^R で履歴検索をするときに * でワイルドカードを使用出来るようにする
 #bindkey '^R' history-incremental-pattern-search-backward
@@ -224,35 +246,3 @@ setopt hist_verify
 # ^P,^Nを検索へ割り当て
 #bindkey "^P" history-beginning-search-backward-end
 #bindkey "^N" history-beginning-search-forward-end
-
-# -----------------------------
-# Plugin
-# -----------------------------
-# zplugが無ければインストール
-if [[ ! -d ~/.zplug ]];then
-  git clone https://github.com/zplug/zplug ~/.zplug
-fi
-
-# zplugを有効化する
-source ~/.zplug/init.zsh
-
-# プラグインList
-# zplug "ユーザー名/リポジトリ名", タグ
-# タイプ補完
-zplug "zsh-users/zsh-completions"
-# タイプ補完
-zplug "zsh-users/zsh-autosuggestions"
-# 構文のハイライト
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "b4b4r07/enhancd", use:init.sh
-
-# インストールしていないプラグインをインストール
-if ! zplug check --verbose; then
-  printf "Install? [y/N]: "
-  if read -q; then
-      echo; zplug install
-  fi
-fi
-
-# コマンドをリンクして、PATH に追加し、プラグインは読み込む
-zplug load --verbose

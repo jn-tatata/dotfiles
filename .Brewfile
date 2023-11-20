@@ -5,10 +5,9 @@ cask_args appdir: "/Applications"
 tap "homebrew/bundle"
 
 # brews
-brew "zsh-completions"
-brew "zsh-autosuggestions"
 brew "rbenv"
 brew "mysql"
+brew "zplug"
 
 # casks
 cask "google-chrome"

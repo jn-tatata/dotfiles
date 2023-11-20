@@ -20,16 +20,16 @@ I'm leaving it as a Mac setup procedure for myself.
     ```bash
     $ cd dotfiles
 
-    <!-- Set initial preference. -->
+    # Set initial preference.
     $ make init
 
-    <!-- Link dotfiles. -->
+    # Link dotfiles.
     $ make link
 
-    <!-- Set macOS system preferences. -->
+    # Set macOS system preferences.
     $ make defaults
 
-    <!-- Install macOS applications. -->
+    # Install macOS applications.
     $ make brew
     ```
 
@@ -43,6 +43,7 @@ I'm leaving it as a Mac setup procedure for myself.
 
 ## Other Settings
 
+<!-- TODO: defaults.sh に置き換える -->
 ### システム設定
 
 ### デスクトップとDock
@@ -73,6 +74,5 @@ I'm leaving it as a Mac setup procedure for myself.
 ### 小ネタ
 zshでテトリスできる
 ```bash
-$ autoload -Uz tetris
-$ zle -N tetris
+$ autoload -Uz tetris;zle -N tetris
 ```
