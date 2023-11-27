@@ -68,8 +68,8 @@ I'm leaving it as a Mac setup procedure for myself.
   - 文頭を自動的に大文字にする => OFF
 
 ### Finder設定
-- 拡張子の表示
-- サイドバー表示項目の調整
+- 設定 > すべてのファイル名拡張子を表示
+- 設定 > サイドバー表示項目の調整
 
 ### 小ネタ
 zshでテトリスできる
