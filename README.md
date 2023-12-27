@@ -43,8 +43,8 @@ I'm leaving it as a Mac setup procedure for myself.
 
 ## Other Settings
 
-<!-- TODO: defaults.sh に置き換える -->
 ### システム設定
+defaults.sh 実行で以下の設定が適用される
 
 ### デスクトップとDock
 - Dockを自動的に表示/非表示 => OFF
@@ -69,10 +69,3 @@ I'm leaving it as a Mac setup procedure for myself.
 
 ### Finder設定
 - 設定 > すべてのファイル名拡張子を表示
-- 設定 > サイドバー表示項目の調整
-
-### 小ネタ
-zshでテトリスできる
-```bash
-$ autoload -Uz tetris;zle -N tetris
-```
