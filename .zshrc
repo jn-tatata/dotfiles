@@ -185,7 +185,7 @@ SAVEHIST=1000000
 setopt histignorealldups
 
 # 他のターミナルとヒストリーを共有
-setopt share_history
+# setopt share_history
 
 # すでにhistoryにあるコマンドは残さない
 setopt hist_ignore_all_dups
