@@ -240,3 +240,10 @@ if ! zplug check --verbose; then
 fi
 # コマンドをリンクして、PATH に追加し、プラグインは読み込む
 zplug load --verbose
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f ~/.dart-cli-completion/zsh-config.zsh ]] && . ~/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
+

@@ -11,7 +11,9 @@ if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
 
 # dart pub
-# export PATH="$PATH":"$HOME/.pub-cache/bin"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # flutter default
-# export PATH="$PATH:$HOME/fvm/default/bin"
+export PATH="$PATH:$HOME/fvm/default/bin"
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
